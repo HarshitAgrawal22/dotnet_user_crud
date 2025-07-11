@@ -92,3 +92,4 @@ C:\Users\Harshit.Agrawal\Downloads\WPFAssignment\WPFAssignment\Assignment.View\o
 C:\Users\Harshit.Agrawal\Downloads\WPFAssignment\WPFAssignment\Assignment.View\obj\Debug\net9.0-windows\Assignment.View.pdb
 C:\Users\Harshit.Agrawal\Downloads\WPFAssignment\WPFAssignment\Assignment.View\obj\Debug\net9.0-windows\Assignment.View.genruntimeconfig.cache
 C:\Users\Harshit.Agrawal\Downloads\WPFAssignment\WPFAssignment\Assignment.View\obj\Debug\net9.0-windows\ref\Assignment.View.dll
+C:\Users\Harshit.Agrawal\Downloads\WPFAssignment\WPFAssignment\Assignment.View\obj\Debug\net9.0-windows\Assignment.View.sourcelink.json

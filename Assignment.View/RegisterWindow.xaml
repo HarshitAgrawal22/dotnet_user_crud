@@ -3,25 +3,65 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:Assignment.ViewModel;assembly=Assignment.ViewModel"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="Register" Height="500" Width="450" WindowStartupLocation="CenterScreen">
+        Title="Register" Height="500" Width="450" WindowStartupLocation="CenterScreen"
+        Background="#1e1e2f">
     <Window.DataContext>
         <vm:RegisterViewModel />
     </Window.DataContext>
 
-    <Grid Background="#f8f9fa">
-        <Border Padding="20" CornerRadius="10" Background="White" BorderBrush="#dee2e6" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ScrollViewer>
-                <StackPanel Width="320" Margin="0,0,10,0">
-                    <TextBlock Text="Create Account" FontSize="20" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center" />
+    <Grid>
+        <Border Padding="25"
+                CornerRadius="10"
+                Background="#2b2b3c"
+                BorderBrush="#44475a"
+                BorderThickness="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Width="330" Margin="0,0,10,0">
+                    <!-- Title -->
+                    <TextBlock Text="📝 Create Account"
+                               FontSize="22"
+                               FontWeight="Bold"
+                               Foreground="#f1f1f1"
+                               Margin="0,0,0,25"
+                               TextAlignment="Center"
+                               FontFamily="Segoe UI" />
 
-                    <Label Content="First Name" />
-                    <TextBox Text="{Binding NewUser.FirstName}" Margin="0,5" Height="28"/>
+                    <!-- First Name -->
+                    <Label Content="First Name" Foreground="#cfcfcf"/>
+                    <TextBox Text="{Binding NewUser.FirstName}"
+                             Margin="0,5"
+                             Height="28"
+                             Background="#3b3f51"
+                             Foreground="White"
+                             BorderBrush="#555"
+                             CaretBrush="White"/>
 
-                    <Label Content="Last Name" />
-                    <TextBox Text="{Binding NewUser.LastName}" Margin="0,5" Height="28"/>
+                    <!-- Last Name -->
+                    <Label Content="Last Name" Foreground="#cfcfcf"/>
+                    <TextBox Text="{Binding NewUser.LastName}"
+                             Margin="0,5"
+                             Height="28"
+                             Background="#3b3f51"
+                             Foreground="White"
+                             BorderBrush="#555"
+                             CaretBrush="White"/>
 
-                    <Label Content="Gender" />
-                    <ComboBox SelectedItem="{Binding NewUser.Gender}" Margin="0,5" Height="28">
+                    <!-- Gender -->
+                    <Label Content="Gender" Foreground="#cfcfcf"/>
+                    <ComboBox SelectedItem="{Binding NewUser.Gender}"
+          Margin="0,5"
+          Height="28"
+          Background="#3b3f51"
+          Foreground="White"
+          BorderBrush="#555">
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#3b3f51"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
                         <ComboBox.ItemsSource>
                             <x:Array Type="{x:Type sys:String}">
                                 <sys:String>Please Select</sys:String>
@@ -32,24 +72,83 @@
                         </ComboBox.ItemsSource>
                     </ComboBox>
 
-                    <Label Content="Email Address" />
-                    <TextBox Text="{Binding NewUser.Email}" Margin="0,5" Height="28"/>
 
-                    <Label Content="Date of Birth" />
-                    <DatePicker SelectedDate="{Binding NewUser.DateOfBirth}" DisplayDateStart="1980-01-01" DisplayDate="1980-01-01" Margin="0,5" Height="28"/>
+                    <!-- Email -->
+                    <Label Content="Email Address" Foreground="#cfcfcf"/>
+                    <TextBox Text="{Binding NewUser.Email}"
+                             Margin="0,5"
+                             Height="28"
+                             Background="#3b3f51"
+                             Foreground="White"
+                             BorderBrush="#555"
+                             CaretBrush="White"/>
 
-                    <Label Content="Password" />
-                    <PasswordBox x:Name="PwdBox" Margin="0,5" Height="28"/>
+                    <!-- DOB -->
+                    <Label Content="Date of Birth" Foreground="#cfcfcf"/>
+                    <DatePicker SelectedDate="{Binding NewUser.DateOfBirth}"
+            Margin="0,5"
+            Height="28"
+            Background="#3b3f51"
+            Foreground="White"
+            BorderBrush="#555">
+                        <DatePicker.Resources>
+                            <Style TargetType="DatePickerTextBox">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#3b3f51"/>
+                                <Setter Property="BorderBrush" Value="#555"/>
+                            </Style>
+                        </DatePicker.Resources>
+                    </DatePicker>
 
-                    <Label Content="Confirm Password" />
-                    <PasswordBox x:Name="ConfirmPwdBox" Margin="0,5" Height="28"/>
+                    <!-- Password -->
+                    <Label Content="Password" Foreground="#cfcfcf"/>
+                    <PasswordBox x:Name="PwdBox"
+                                 Margin="0,5"
+                                 Height="28"
+                                 Background="#3b3f51"
+                                 Foreground="White"
+                                 BorderBrush="#555"
+                                 CaretBrush="White"/>
 
-                    <TextBlock Text="{Binding RegisterMessage}" Foreground="Red" Margin="0,10,0,0" TextAlignment="Center"/>
-                    <Button Content="Register" Command="{Binding RegisterCommand}" Height="32" Background="#28a745" Foreground="White" FontWeight="Bold" Margin="0,10,0,0"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-                        <Button Content="Back to Login" Click="BackToLogin_Click" Margin="0,15,0,0" Background="Transparent" BorderBrush="Transparent" Foreground="Blue" Height="30"/>
+                    <!-- Confirm Password -->
+                    <Label Content="Confirm Password" Foreground="#cfcfcf"/>
+                    <PasswordBox x:Name="ConfirmPwdBox"
+                                 Margin="0,5"
+                                 Height="28"
+                                 Background="#3b3f51"
+                                 Foreground="White"
+                                 BorderBrush="#555"
+                                 CaretBrush="White"/>
+
+                    <!-- Message -->
+                    <TextBlock Text="{Binding RegisterMessage}"
+                               Foreground="#e57373"
+                               Margin="0,10,0,0"
+                               TextAlignment="Center"/>
+
+                    <!-- Register Button -->
+                    <Button Content="Register"
+                            Command="{Binding RegisterCommand}"
+                            Height="32"
+                            Background="#28a745"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Margin="0,10,0,0"
+                            Cursor="Hand"/>
+
+                    <!-- Back to Login -->
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,10,0,0">
+                        <Button Content="Back to Login"
+                                Click="BackToLogin_Click"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Foreground="#61afef"
+                                FontWeight="Bold"
+                                Cursor="Hand"
+                                Height="30"/>
                     </StackPanel>
-                    
                 </StackPanel>
             </ScrollViewer>
         </Border>

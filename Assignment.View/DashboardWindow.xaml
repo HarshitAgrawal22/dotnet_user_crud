@@ -2,17 +2,21 @@
         xmlns:local="clr-namespace:Assignment.View"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Dashboard" Height="500" Width="700" WindowStartupLocation="CenterScreen">
-    <Grid Background="#f8f9fa">
+        Title="Dashboard" Height="500" Width="700" WindowStartupLocation="CenterScreen"
+        Background="#1e1e2f">
+    <Grid>
         <DockPanel LastChildFill="True">
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="#343a40" Height="50" VerticalAlignment="Top">
-                <TextBlock Text="UserManagment" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="10,0" HorizontalAlignment="Left"/>
-                <TextBlock Text="Welcome!" VerticalAlignment="Center" Foreground="White" FontWeight="SemiBold" FontSize="14" Margin="150,0,0,0"  HorizontalAlignment="Center"/>
-                <Button Content="Logout" Click="Logout_Click" Margin="200,0,0,0" Width="80" Height="28" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <!-- Top Navigation Bar -->
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="#2b2b3c" Height="50" VerticalAlignment="Top">
+                <TextBlock Text="User Management" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16" Margin="10,0" HorizontalAlignment="Left"/>
+                <TextBlock Text="Welcome!" VerticalAlignment="Center" Foreground="#cddc39" FontWeight="SemiBold" FontSize="14" Margin="150,0,0,0" HorizontalAlignment="Center"/>
+                <Button Content="Logout" Click="Logout_Click" Margin="200,0,0,0" Width="80" Height="28" HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Background="#44475a" Foreground="White" BorderBrush="#6272a4" />
             </StackPanel>
 
+            <!-- User List -->
             <DockPanel Margin="20">
-                <ListView x:Name="UserListView" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <ListView x:Name="UserListView" Background="#2b2b3c" Foreground="White" BorderBrush="#44475a">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" Width="150"/>
