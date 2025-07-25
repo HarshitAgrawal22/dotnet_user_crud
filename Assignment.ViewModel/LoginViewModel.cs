@@ -11,6 +11,9 @@ namespace Assignment.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
+
+        // this file have code for login view model
+        
         private string _email;
         private string _password;
         private string _loginMessage;
